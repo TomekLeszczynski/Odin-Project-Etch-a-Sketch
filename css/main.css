@@ -20,6 +20,22 @@ h1 {
   font-weight: 900;
 }
 
+button {
+  margin: 15px 0;
+  text-transform: uppercase;
+  padding: 10px 15px;
+  border-radius: 15px;
+  border: none;
+  color: white;
+  background-color: black;
+  transition: scale 0.3s;
+  cursor: pointer;
+}
+
+button:hover {
+  scale: 1.1;
+}
+
 .box-container {
   height: 800px;
   width: 800px;
