@@ -24,15 +24,24 @@ function clearAll() {
 	squares.forEach(square => square.remove())
 }
 let mouseDown = false
+let saturationValue = 0
+let increaseSat = true
 function changeColor(e) {
 	if (e.target.classList.contains('box') && mouseDown) {
-		const r = Math.floor(Math.random() * 255)
-		const g = Math.floor(Math.random() * 255)
-		const b = Math.floor(Math.random() * 255)
-		e.target.style.backgroundColor = `rgb(${r},${g},${b})`
+		// option for random color of each square
+		// const rbgColor = `rgb(${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)},${Math.floor(
+		// 	Math.random() * 255
+		// )})`
+		// option for increasing black for each square
+		if (saturationValue <= 0 || saturationValue >= 100) increaseSat = !increaseSat
+		increaseSat ? (saturationValue -= 10) : (saturationValue += 10)
+		const grayScaleColor = `rgb(${saturationValue}%,${saturationValue}%,${saturationValue}%)`
+		e.target.style.backgroundColor = grayScaleColor
+		console.log(grayScaleColor)
 	}
 }
 button.addEventListener('click', handlePrompt)
-container.addEventListener('mouseover', changeColor)
 container.addEventListener('mousedown', () => (mouseDown = true))
 container.addEventListener('mouseup', () => (mouseDown = false))
+container.addEventListener('mousedown', changeColor)
+container.addEventListener('mouseover', changeColor)

@@ -47,4 +47,5 @@ button:hover {
 
 .box {
   flex: 1;
+  border: 1px dotted rgba(128, 128, 128, 0.08);
 }/*# sourceMappingURL=main.css.map */
