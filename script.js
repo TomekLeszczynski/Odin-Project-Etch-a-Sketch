@@ -26,7 +26,10 @@ function clearAll() {
 let mouseDown = false
 function changeColor(e) {
 	if (e.target.classList.contains('box') && mouseDown) {
-		e.target.style.backgroundColor = 'red'
+		const r = Math.floor(Math.random() * 255)
+		const g = Math.floor(Math.random() * 255)
+		const b = Math.floor(Math.random() * 255)
+		e.target.style.backgroundColor = `rgb(${r},${g},${b})`
 	}
 }
 button.addEventListener('click', handlePrompt)
