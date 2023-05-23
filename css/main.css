@@ -11,28 +11,33 @@ body {
   align-items: center;
   width: 100dvw;
   height: 100dvh;
-  background-color: #f3f4f6;
+  background-color: orange;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-h1 {
-  font-size: 60px;
-  font-weight: 900;
+.items-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 750px;
 }
-
-button {
+.items-box h1 {
+  font-size: 21px;
+  color: white;
+}
+.items-box button {
   margin: 15px 0;
   text-transform: uppercase;
   padding: 10px 15px;
   border-radius: 15px;
-  border: none;
+  border: 1px solid whitesmoke;
   color: white;
-  background-color: black;
+  background: none;
   transition: scale 0.3s;
   cursor: pointer;
 }
-
-button:hover {
+.items-box button:hover {
   scale: 1.1;
 }
 
@@ -42,10 +47,10 @@ button:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  border: 1px solid gray;
+  border: 2px solid white;
 }
 
 .box {
   flex: 1;
-  border: 1px dotted rgba(128, 128, 128, 0.08);
+  border: 1px dashed rgba(255, 255, 255, 0.1);
 }/*# sourceMappingURL=main.css.map */

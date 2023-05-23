@@ -3,9 +3,7 @@ const button = document.querySelector('button')
 
 function handlePrompt() {
 	let gridValue = parseInt(prompt('Please set the number of squares per side. Max value is 100', 16))
-	if (gridValue > 100) {
-		gridValue = 100
-	}
+	if (gridValue > 100) gridValue = 100
 	clearAll()
 	handleSquares(gridValue)
 }
@@ -24,20 +22,19 @@ function clearAll() {
 	squares.forEach(square => square.remove())
 }
 let mouseDown = false
-let saturationValue = 0
+// let saturationValue = 0
 let increaseSat = true
 function changeColor(e) {
 	if (e.target.classList.contains('box') && mouseDown) {
-		// option for random color of each square
-		// const rbgColor = `rgb(${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)},${Math.floor(
-		// 	Math.random() * 255
-		// )})`
-		// option for increasing black for each square
-		if (saturationValue <= 0 || saturationValue >= 100) increaseSat = !increaseSat
-		increaseSat ? (saturationValue -= 10) : (saturationValue += 10)
-		const grayScaleColor = `rgb(${saturationValue}%,${saturationValue}%,${saturationValue}%)`
-		e.target.style.backgroundColor = grayScaleColor
-		console.log(grayScaleColor)
+		const rbgColor = `rgb(${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)},${Math.floor(
+			Math.random() * 255
+		)})`
+		e.target.style.backgroundColor = rbgColor
+
+		// if (saturationValue <= 0 || saturationValue >= 100) increaseSat = !increaseSat
+		// increaseSat ? (saturationValue -= 10) : (saturationValue += 10)
+		// const grayScaleColor = `rgb(${saturationValue}%,${saturationValue}%,${saturationValue}%)`
+		// e.target.style.backgroundColor = grayScaleColor
 	}
 }
 button.addEventListener('click', handlePrompt)
